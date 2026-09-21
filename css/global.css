@@ -1,0 +1,114 @@
+
+@import url(registro.css);
+@import url(auth.css);
+@import url(header.css);
+@import url(home.css);
+@import url(footer.css);
+@import url(productos.css);
+
+/* CSS RESET */
+body,
+img,
+h1,
+h2,
+h3,
+p,
+ul,
+li,
+section,
+header,
+footer,
+main,
+aside,
+fieldset,
+legend,
+label,
+input,
+select,
+textarea,
+button
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+    --color-primary: #80065f;
+    --color-secondary: #272626;
+    --color-terciary: rgb(155, 153, 153);
+    --color-text: white;
+    --color-background: black;
+    --container-width: 1200px;
+    --border-radius: 1rem;
+    --transition: 0.3s ease;
+    --font-primary: 'inter', sans-serif;
+}
+
+body {
+    color: var(--color-text);
+    background-color: var(--color-background);
+    font-family: var(--font-primary);
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 200;
+}
+
+h1 {
+    font-family: var(--font-primary);
+    font-weight: 700;
+}
+
+h2 {
+    font-family: var(--font-primary);
+    font-weight: 200;
+    font-size: 3.5rem;
+    text-align: center;
+    margin: 6rem 1rem;
+
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.button {
+    width: 100%;
+    background-color: var(--color-background);
+    border: 2px solid var(--color-secondary);
+    padding: 1.6rem;
+    border-radius: 9px;
+}
+
+.button:hover {
+    background-color: var(--color-secondary);
+    cursor: pointer;
+}
+
+input {
+    margin: 1rem 0;
+    padding: 0.8rem;      
+    border: 1px solid var(--color-text);
+    border-radius: 4px;
+    width: 100%;
+    background-color: var(--color-primary);
+    color: var(--color-text);
+}
+
+button[type="submit"] {
+    height: 1.8rem;
+}
+
+button:hover {
+    background-color: var(--color-primary);
+    color: var(--color-text);
+}

@@ -1,0 +1,141 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 3rem 0 0;
+}
+
+.logo {
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: clamp(120px, 10vw, 140px);
+    height: auto;
+}
+
+.menu-toggle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.menu-button {
+    display: none;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav .button {
+    width: auto;
+    padding: 1.2rem 1.4rem;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+@media (max-width: 1200px) {
+    .header {
+        padding: 0.5rem 2rem 0.5rem 2rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .header {
+        position: relative;
+        z-index: 20;
+        padding: 0.6rem 1rem;
+    }
+
+    .menu-button {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 6px;
+        width: 44px;
+        height: 44px;
+        padding: 10px 8px;
+        cursor: pointer;
+    }
+
+    .menu-button span {
+        display: block;
+        height: 2px;
+        width: 100%;
+        background-color: var(--color-text);
+        border-radius: 2px;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .menu-toggle:checked + .menu-button span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle:checked + .menu-button span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle:checked + .menu-button span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: calc(100% - 0.25rem);
+        right: 1rem;
+        min-width: 220px;
+        padding: 0.5rem;
+        background-color: var(--color-background);
+        border: 2px solid var(--color-secondary);
+        border-radius: 9px;
+    }
+
+    .menu-toggle:checked ~ nav {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    nav .button {
+        width: 100%;
+        padding: 0.9rem 1rem;
+    }
+
+    nav a {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 425px) {
+    .header {
+        padding: 0.5rem 0.75rem;
+    }
+
+    nav {
+        right: 0.75rem;
+        left: 0.75rem;
+        min-width: 0;
+    }
+}
