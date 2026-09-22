@@ -52,6 +52,39 @@
     margin-top: 0.5rem;
 }
 
+.form-actions {
+    display: flex;
+    align-items: stretch;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.register-form .form-actions button,
+.register-form .form-actions button[type="submit"] {
+    flex: 1;
+    width: auto;
+    min-width: 0;
+    height: 2.75rem;
+    min-height: 2.75rem;
+    margin-top: 0;
+    padding: 0 0.75rem;
+    box-sizing: border-box;
+    white-space: nowrap;
+    line-height: 1;
+    border: 1px solid transparent;
+}
+
+.register-form .form-actions .form-reset {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: var(--color-text);
+}
+
+.form-reset:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-text);
+}
+
 .auth-recover {
     width: 60%;
     max-width: 1200px;
