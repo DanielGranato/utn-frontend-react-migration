@@ -16,16 +16,19 @@ export default function Login() {
 
   function handleLoginChange(event) {
     const { name, value } = event.target
+    console.log(`[Login] campo alterado: ${name} ->`, value)
     setLoginForm((prev) => ({ ...prev, [name]: value }))
   }
 
   function handleLoginSubmit(event) {
     event.preventDefault()
+    console.log('[Login] submit disparado con:', loginForm)
     setLoginSubmitted(true)
   }
 
   function handleRecoverSubmit(event) {
     event.preventDefault()
+    console.log('[Login] recuperación de contraseña solicitada para:', recoverEmail)
     setRecoverSubmitted(true)
   }
 

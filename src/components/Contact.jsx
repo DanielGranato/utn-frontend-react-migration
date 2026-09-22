@@ -22,22 +22,35 @@ export default function Contact({ initialDni = '' }) {
 
   function handleChange(event) {
     const { name, type, checked, value } = event.target
+    const nextValue = type === 'checkbox' ? checked : value
+
+    console.log(`[Contact] campo alterado: ${name} ->`, nextValue)
+
     setForm((prev) => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value,
+      [name]: nextValue,
     }))
   }
 
   function handleSubmit(event) {
     event.preventDefault()
+    console.log('[Contact] submit disparado com:', form)
 
     if (form.password !== form.passwordConfirm) {
       setError('Las contraseñas no coinciden.')
+      console.log('[Contact] erro de validación: contraseñas no coinciden')
       return
     }
 
     setError('')
     setSubmitted(true)
+    console.log('[Contact] cuenta creada (simulado, sin backend)')
+  }
+
+  function handleReset() {
+    console.log('[Contact] formulario reseteado')
+    setForm(initialForm)
+    setError('')
   }
 
   if (submitted) {
@@ -175,7 +188,12 @@ export default function Contact({ initialDni = '' }) {
 
         {error ? <p className="form-error">{error}</p> : null}
 
-        <button type="submit">Crear cuenta</button>
+        <div className="form-actions">
+          <button type="submit">Crear cuenta</button>
+          <button type="button" className="form-reset" onClick={handleReset}>
+            Limpiar formulario
+          </button>
+        </div>
       </form>
 
       <p className="auth-links">
