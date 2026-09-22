@@ -15,6 +15,7 @@ export default function Home() {
 
   function handleHeroSubmit(event) {
     event.preventDefault()
+    console.log('[Home] submit DNI hero:', dni)
     const params = new URLSearchParams()
     if (dni.trim()) {
       params.set('dni', dni.trim())
@@ -24,6 +25,7 @@ export default function Home() {
 
   function handleNewsletterSubmit(event) {
     event.preventDefault()
+    console.log('[Home] submit newsletter:', email)
     setNewsletterSent(true)
   }
 
