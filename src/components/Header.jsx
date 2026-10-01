@@ -1,3 +1,8 @@
+/*
+ * Encabezado con el logo y la navegación principal (productos,
+ * iniciar sesión y registro). En pantallas chicas el menú se abre
+ * con el botón hamburguesa; al cambiar de ruta se cierra solo.
+ */
 import { useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import useMenu from '../hooks/useMenu.js'
@@ -7,6 +12,7 @@ export default function Header() {
   const { menuOpen, toggleMenu, closeMenu } = useMenu()
   const location = useLocation()
 
+  // Cierra el menú móvil cada vez que cambia la ruta.
   useEffect(() => {
     closeMenu()
   }, [location.pathname, closeMenu])

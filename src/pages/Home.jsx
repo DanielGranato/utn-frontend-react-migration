@@ -1,3 +1,9 @@
+/*
+ * Página de inicio. Presenta la propuesta de Bank, los beneficios
+ * y tres llamados a la acción: newsletter, productos y registro.
+ * El formulario del hero pide el DNI y continúa el alta en /registro,
+ * llevando ese dato en la URL para precargarlo.
+ */
 import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Card from '../components/Card.jsx'
@@ -13,6 +19,7 @@ export default function Home() {
     document.title = 'Bank | Experiencia financiera'
   }, [])
 
+  // Envía el DNI a la página de registro como parámetro de búsqueda.
   function handleHeroSubmit(event) {
     event.preventDefault()
     console.log('[Home] submit DNI hero:', dni)
@@ -23,6 +30,7 @@ export default function Home() {
     navigate(`/registro?${params.toString()}`)
   }
 
+  // Formulario controlado del newsletter: guarda el e-mail y muestra la confirmación.
   function handleNewsletterSubmit(event) {
     event.preventDefault()
     console.log('[Home] submit newsletter:', email)

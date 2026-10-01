@@ -1,3 +1,8 @@
+/*
+ * Catálogo de productos. La lista vive en el array products y cada
+ * ítem se renderiza con el mismo componente Card, en lugar de repetir
+ * el mismo bloque de HTML seis veces.
+ */
 import { useEffect } from 'react'
 import Card from '../components/Card.jsx'
 import img01 from '../assets/img01.png'

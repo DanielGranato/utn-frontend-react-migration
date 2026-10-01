@@ -1,3 +1,9 @@
+/*
+ * Formulario de registro controlado. Un solo estado guarda todos los
+ * campos. Al enviar, comprueba que las contraseñas coincidan; si todo
+ * está bien, muestra la confirmación. El alta es simulada, sin servidor.
+ * initialDni permite precargar el documento cuando viene desde el inicio.
+ */
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -36,6 +42,7 @@ export default function Contact({ initialDni = '' }) {
     event.preventDefault()
     console.log('[Contact] submit disparado com:', form)
 
+    // Validación propia: el resto de los campos usa los required del HTML.
     if (form.password !== form.passwordConfirm) {
       setError('Las contraseñas no coinciden.')
       console.log('[Contact] erro de validación: contraseñas no coinciden')

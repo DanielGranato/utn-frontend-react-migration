@@ -1,3 +1,9 @@
+/*
+ * Inicio de sesión y recuperación de contraseña.
+ * Ambos formularios son controlados: el estado guarda lo que escribe
+ * el usuario y, al enviar, se simula el resultado en pantalla
+ * (no hay backend; los datos se registran en la consola).
+ */
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 

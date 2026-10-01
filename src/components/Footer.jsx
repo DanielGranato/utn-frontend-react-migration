@@ -1,3 +1,7 @@
+/*
+ * Pie de página compartido: descripción del banco, enlaces a las
+ * mismas rutas del menú, datos de contacto y redes sociales.
+ */
 import { Link } from 'react-router-dom'
 import SocialIcons from './SocialIcons.jsx'
 

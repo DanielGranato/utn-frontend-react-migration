@@ -1,3 +1,8 @@
+/*
+ * Página de alta de cuenta. Si el usuario llegó desde el formulario
+ * del inicio, el DNI viene en la URL (?dni=...) y se pasa al formulario
+ * para que el campo ya aparezca completo.
+ */
 import { useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import Contact from '../components/Contact.jsx'

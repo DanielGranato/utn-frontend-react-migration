@@ -1,3 +1,12 @@
+/*
+ * Rutas de la aplicación. Todas las páginas comparten el mismo Layout
+ * (encabezado y pie). El contenido de cada ruta se muestra en el Outlet.
+ *
+ *   /            inicio
+ *   /login       iniciar sesión y recuperar contraseña
+ *   /productos   catálogo de productos
+ *   /registro    alta de cuenta
+ */
 import { Route, Routes } from 'react-router-dom'
 import Layout from './components/Layout.jsx'
 import Home from './pages/Home.jsx'

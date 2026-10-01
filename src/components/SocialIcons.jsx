@@ -1,3 +1,4 @@
+/* Íconos de redes sociales del pie de página (enlaces de ejemplo). */
 export default function SocialIcons() {
   return (
     <div className="social-links">

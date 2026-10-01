@@ -1,3 +1,9 @@
+/*
+ * Tarjeta reutilizable con dos variantes:
+ *   product  imagen, título y descripción (catálogo)
+ *   cta      título, texto y el contenido que se le pase (children),
+ *            por ejemplo un formulario o un enlace
+ */
 export default function Card({
   variant = 'product',
   title,
