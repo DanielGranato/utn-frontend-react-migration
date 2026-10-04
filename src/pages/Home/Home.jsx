@@ -80,7 +80,7 @@ export default function Home() {
       </Hero>
 
       <section className="benefits" aria-labelledby="beneficios-title">
-        <SectionTitle id="beneficios-title">
+        <SectionTitle id="beneficios-title" className="section-title">
           Todo lo que necesitas de un banco. <br />
           En una sola aplicación.
         </SectionTitle>

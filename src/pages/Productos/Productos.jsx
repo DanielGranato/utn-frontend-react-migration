@@ -80,7 +80,9 @@ export default function Productos() {
       </Hero>
 
       <section>
-        <SectionTitle>Vos elegís los beneficios que más te importan</SectionTitle>
+        <SectionTitle className="section-title">
+          Vos elegís los beneficios que más te importan
+        </SectionTitle>
 
         <div className="products-grid">
           {products.map((product) => (

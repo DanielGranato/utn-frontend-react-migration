@@ -5,3 +5,9 @@ h2 {
     text-align: center;
     margin: 6rem 1rem;
 }
+
+@media (min-width: 901px) {
+    .section-title {
+        margin: 6rem 1rem;
+    }
+}
