@@ -1,0 +1,61 @@
+.container-benefits > .cta-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: var(--color-primary);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.cta-card h3 {
+    margin-bottom: 0.75rem;
+}
+
+.cta-card p {
+    flex-grow: 1;
+    margin-bottom: 1rem;
+}
+
+.cta-card .stack-form,
+.cta-card .cta-button {
+    margin-top: auto;
+}
+
+.product-card {
+    background-color: var(--color-secondary);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,.12);
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.product-card h3 {
+    color: var(--color-text);
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+}
+
+.product-text {
+    padding: 1rem 1rem 3rem 1rem;
+    color: var(--color-terciary);
+}
+
+.product-card img {
+    transition: transform .4s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.03);
+}
+
+@media (max-width: 900px) {
+    .container-benefits > .cta-card {
+        width: 100%;
+        max-width: 420px;
+    }
+}

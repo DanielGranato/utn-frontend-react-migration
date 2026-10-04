@@ -8,11 +8,11 @@
  *   /registro    alta de cuenta
  */
 import { Route, Routes } from 'react-router-dom'
-import Layout from './components/Layout.jsx'
-import Home from './pages/Home.jsx'
-import Login from './pages/Login.jsx'
-import Productos from './pages/Productos.jsx'
-import Registro from './pages/Registro.jsx'
+import Layout from './components/Layout/Layout.jsx'
+import Home from './pages/Home/Home.jsx'
+import Login from './pages/Login/Login.jsx'
+import Productos from './pages/Productos/Productos.jsx'
+import Registro from './pages/Registro/Registro.jsx'
 
 export default function App() {
   return (

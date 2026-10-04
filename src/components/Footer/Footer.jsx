@@ -3,7 +3,8 @@
  * mismas rutas del menú, datos de contacto y redes sociales.
  */
 import { Link } from 'react-router-dom'
-import SocialIcons from './SocialIcons.jsx'
+import SocialIcons from '../SocialIcons/SocialIcons.jsx'
+import './Footer.css'
 
 export default function Footer() {
   return (

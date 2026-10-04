@@ -47,10 +47,13 @@ En la migración a React:
 
 ```
 src/
-  components/   → Header, Footer, Layout, Card, SocialIcons, Contact
-  pages/        → Home, Login, Productos, Registro
-  hooks/        → useMenu
-  css/          → estilos organizados por componente/página
+  components/   → cada componente en su carpeta, con su JSX y su CSS
+                  Header, Footer, SocialIcons, Layout, Hero, SectionTitle,
+                  StackForm, FormField, FormCard, FormHint, RecoverForm,
+                  Card, Contact
+  pages/        → Home, Login, Productos, Registro (cada una en su carpeta)
+  hooks/        → useMenu, usePageTitle
+  css/          → estilos globales (reset, variables y base)
   assets/       → imágenes del sitio
 ```
 

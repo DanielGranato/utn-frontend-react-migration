@@ -3,14 +3,17 @@
  * ítem se renderiza con el mismo componente Card, en lugar de repetir
  * el mismo bloque de HTML seis veces.
  */
-import { useEffect } from 'react'
-import Card from '../components/Card.jsx'
-import img01 from '../assets/img01.png'
-import img02 from '../assets/img02.jpg'
-import img03 from '../assets/img03.jpg'
-import img04 from '../assets/img04.jpg'
-import img05 from '../assets/img05.jpg'
-import img06 from '../assets/img06.jpg'
+import Card from '../../components/Card/Card.jsx'
+import Hero from '../../components/Hero/Hero.jsx'
+import SectionTitle from '../../components/SectionTitle/SectionTitle.jsx'
+import usePageTitle from '../../hooks/usePageTitle.js'
+import img01 from '../../assets/img01.png'
+import img02 from '../../assets/img02.jpg'
+import img03 from '../../assets/img03.jpg'
+import img04 from '../../assets/img04.jpg'
+import img05 from '../../assets/img05.jpg'
+import img06 from '../../assets/img06.jpg'
+import './Productos.css'
 
 const products = [
   {
@@ -52,40 +55,32 @@ const products = [
 ]
 
 export default function Productos() {
-  useEffect(() => {
-    document.title = 'Bank | Productos'
-  }, [])
+  usePageTitle('Bank | Productos')
 
   return (
     <main>
-      <section className="hero">
-        <div className="container">
-          <div className="hero-content">
-            <h1>Bank, una experiencia financiera extraordinaria</h1>
+      <Hero>
+        <aside className="hero-card">
+          <div className="card-arrow-container">
+            <svg
+              className="elegant-arrow"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M12 5v14M19 12l-7 7-7-7" />
+            </svg>
+            <h3>Descubra nuestros productos financieros y beneficios</h3>
           </div>
-
-          <aside className="hero-card">
-            <div className="card-arrow-container">
-              <svg
-                className="elegant-arrow"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M12 5v14M19 12l-7 7-7-7" />
-              </svg>
-              <h3>Descubra nuestros productos financieros y beneficios</h3>
-            </div>
-          </aside>
-        </div>
-      </section>
+        </aside>
+      </Hero>
 
       <section>
-        <h2>Vos elegís los beneficios que más te importan</h2>
+        <SectionTitle>Vos elegís los beneficios que más te importan</SectionTitle>
 
         <div className="products-grid">
           {products.map((product) => (

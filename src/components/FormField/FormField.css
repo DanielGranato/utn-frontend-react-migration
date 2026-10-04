@@ -1,0 +1,40 @@
+.register-form .form-group {
+    margin-top: 0.5rem;
+    text-align: left;
+}
+
+.register-form label {
+    display: block;
+    font-weight: 500;
+}
+
+.register-form input {
+    width: 100%;
+    border: 1px solid var(--color-text);
+    border-radius: 6px;
+    color: var(--color-text);
+}
+
+.register-form input[type="date"],
+.register-form input[type="password"] {
+    color-scheme: dark;
+}
+
+.form-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    margin: 1rem 0 1.25rem;
+    text-align: left;
+}
+
+.form-check input {
+    width: auto;
+    margin: 0.3rem 0 0;
+    flex-shrink: 0;
+}
+
+.form-check label {
+    font-weight: 400;
+    font-size: 0.9rem;
+}

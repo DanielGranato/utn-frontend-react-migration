@@ -3,31 +3,26 @@
  * del inicio, el DNI viene en la URL (?dni=...) y se pasa al formulario
  * para que el campo ya aparezca completo.
  */
-import { useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import Contact from '../components/Contact.jsx'
+import Contact from '../../components/Contact/Contact.jsx'
+import Hero from '../../components/Hero/Hero.jsx'
+import SectionTitle from '../../components/SectionTitle/SectionTitle.jsx'
+import usePageTitle from '../../hooks/usePageTitle.js'
+import './Registro.css'
 
 export default function Registro() {
   const [searchParams] = useSearchParams()
   const initialDni = searchParams.get('dni') ?? ''
 
-  useEffect(() => {
-    document.title = 'Bank | Registro'
-  }, [])
+  usePageTitle('Bank | Registro')
 
   return (
     <main>
-      <section className="hero hero-register">
-        <div className="container">
-          <div className="hero-content-form">
-            <h1>Bank, una experiencia financiera extraordinaria</h1>
-          </div>
-        </div>
-      </section>
+      <Hero variant="register" />
 
       <section className="form-follow">
         <div className="container">
-          <h2 className="form-h2">El futuro comienza aquí.</h2>
+          <SectionTitle className="form-h2">El futuro comienza aquí.</SectionTitle>
           <Contact initialDni={initialDni} />
         </div>
       </section>

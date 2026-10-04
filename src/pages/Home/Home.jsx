@@ -4,10 +4,31 @@
  * El formulario del hero pide el DNI y continúa el alta en /registro,
  * llevando ese dato en la URL para precargarlo.
  */
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import Card from '../components/Card.jsx'
-import appImage from '../assets/img-app.png'
+import Card from '../../components/Card/Card.jsx'
+import FormHint from '../../components/FormHint/FormHint.jsx'
+import Hero from '../../components/Hero/Hero.jsx'
+import SectionTitle from '../../components/SectionTitle/SectionTitle.jsx'
+import StackForm from '../../components/StackForm/StackForm.jsx'
+import usePageTitle from '../../hooks/usePageTitle.js'
+import appImage from '../../assets/img-app.png'
+import './Home.css'
+
+const benefits = [
+  {
+    title: 'Sin comisiones',
+    text: 'Sin cargos por mantenimiento de la cuenta ni por realizar transferencias Pix y TED',
+  },
+  {
+    title: 'Servicio rápido',
+    text: 'Asistencia móvil a cualquier hora del día',
+  },
+  {
+    title: 'Rendimiento diario',
+    text: 'El dinero depositado en la cuenta genera más ganancias que en una cuenta de ahorros',
+  },
+]
 
 export default function Home() {
   const navigate = useNavigate()
@@ -15,9 +36,7 @@ export default function Home() {
   const [email, setEmail] = useState('')
   const [newsletterSent, setNewsletterSent] = useState(false)
 
-  useEffect(() => {
-    document.title = 'Bank | Experiencia financiera'
-  }, [])
+  usePageTitle('Bank | Experiencia financiera')
 
   // Envía el DNI a la página de registro como parámetro de búsqueda.
   function handleHeroSubmit(event) {
@@ -39,41 +58,32 @@ export default function Home() {
 
   return (
     <main>
-      <section className="hero">
-        <div className="container">
-          <div className="hero-content">
-            <h1>Bank, una experiencia financiera extraordinaria</h1>
-          </div>
+      <Hero>
+        <div className="hero-card">
+          <SectionTitle className="hero-card-title">
+            Solicita tu tarjeta de crédito y tu cuenta Bank
+          </SectionTitle>
 
-          <div className="hero-card">
-            <h2 className="hero-card-title">
-              Solicita tu tarjeta de crédito y tu cuenta Bank
-            </h2>
-
-            <form className="stack-form" onSubmit={handleHeroSubmit}>
-              <label htmlFor="dni-hero">DNI</label>
-              <input
-                type="text"
-                id="dni-hero"
-                name="dni"
-                inputMode="numeric"
-                autoComplete="off"
-                placeholder="Ingrese tu DNI"
-                value={dni}
-                onChange={(event) => setDni(event.target.value)}
-                required
-              />
-              <button type="submit">Avanzar</button>
-            </form>
-          </div>
+          <StackForm
+            id="dni-hero"
+            label="DNI"
+            name="dni"
+            inputMode="numeric"
+            autoComplete="off"
+            placeholder="Ingrese tu DNI"
+            value={dni}
+            onChange={(event) => setDni(event.target.value)}
+            onSubmit={handleHeroSubmit}
+            buttonText="Avanzar"
+          />
         </div>
-      </section>
+      </Hero>
 
       <section className="benefits" aria-labelledby="beneficios-title">
-        <h2 id="beneficios-title">
+        <SectionTitle id="beneficios-title">
           Todo lo que necesitas de un banco. <br />
           En una sola aplicación.
-        </h2>
+        </SectionTitle>
         <img
           className="app"
           src={appImage}
@@ -81,29 +91,17 @@ export default function Home() {
         />
 
         <div className="container-benefits">
-          <article>
-            <h3>Sin comisiones</h3>
-            <p>
-              Sin cargos por mantenimiento de la cuenta ni por realizar
-              transferencias Pix y TED
-            </p>
-          </article>
-          <article>
-            <h3>Servicio rápido</h3>
-            <p>Asistencia móvil a cualquier hora del día</p>
-          </article>
-          <article>
-            <h3>Rendimiento diario</h3>
-            <p>
-              El dinero depositado en la cuenta genera más ganancias que en una
-              cuenta de ahorros
-            </p>
-          </article>
+          {benefits.map((benefit) => (
+            <article key={benefit.title}>
+              <h3>{benefit.title}</h3>
+              <p>{benefit.text}</p>
+            </article>
+          ))}
         </div>
       </section>
 
       <section className="cta" aria-labelledby="cta-title">
-        <h2 id="cta-title">Empezá con Bank</h2>
+        <SectionTitle id="cta-title">Empezá con Bank</SectionTitle>
 
         <div className="container-benefits">
           <Card
@@ -112,22 +110,20 @@ export default function Home() {
             description="Dejá tu e-mail y enterate de beneficios y lanzamientos."
           >
             {newsletterSent ? (
-              <p className="form-hint">¡Listo! Te vamos a escribir a {email}.</p>
+              <FormHint>¡Listo! Te vamos a escribir a {email}.</FormHint>
             ) : (
-              <form className="stack-form" onSubmit={handleNewsletterSubmit}>
-                <label htmlFor="correo-novedades">E-mail</label>
-                <input
-                  type="email"
-                  id="correo-novedades"
-                  name="correo"
-                  autoComplete="email"
-                  placeholder="Ingrese tu e-mail"
-                  value={email}
-                  onChange={(event) => setEmail(event.target.value)}
-                  required
-                />
-                <button type="submit">Registrar</button>
-              </form>
+              <StackForm
+                id="correo-novedades"
+                label="E-mail"
+                name="correo"
+                type="email"
+                autoComplete="email"
+                placeholder="Ingrese tu e-mail"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+                onSubmit={handleNewsletterSubmit}
+                buttonText="Registrar"
+              />
             )}
           </Card>
 

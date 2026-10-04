@@ -5,8 +5,9 @@
  */
 import { useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import useMenu from '../hooks/useMenu.js'
-import logo from '../assets/logo.png'
+import useMenu from '../../hooks/useMenu.js'
+import logo from '../../assets/logo.png'
+import './Header.css'
 
 export default function Header() {
   const { menuOpen, toggleMenu, closeMenu } = useMenu()

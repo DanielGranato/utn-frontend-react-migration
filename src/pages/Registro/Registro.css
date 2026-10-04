@@ -1,0 +1,25 @@
+.form-follow {
+    position: relative;
+    z-index: 1;
+    padding-bottom: 4rem;
+}
+
+.form-follow .container {
+    align-items: start;
+}
+
+.form-h2 {
+    margin: 3rem 0 0;
+    text-align: left;
+}
+
+@media (max-width: 900px) {
+    .form-follow .container {
+        justify-items: center;
+    }
+
+    .form-h2 {
+        text-align: center;
+        margin: 3rem 1rem 0;
+    }
+}

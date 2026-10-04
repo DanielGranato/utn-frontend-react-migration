@@ -1,0 +1,7 @@
+h2 {
+    font-family: var(--font-primary);
+    font-weight: 200;
+    font-size: 3.5rem;
+    text-align: center;
+    margin: 6rem 1rem;
+}

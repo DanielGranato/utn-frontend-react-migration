@@ -1,0 +1,18 @@
+.stack-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.stack-form label {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.stack-form input {
+    margin: 0;
+}
+
+.stack-form button[type="submit"] {
+    height: auto;
+}

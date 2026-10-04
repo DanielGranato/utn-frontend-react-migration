@@ -1,0 +1,114 @@
+.hero {
+    background: url("../../assets/hero_image.jpg") center/cover no-repeat;
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+.hero-content {
+    max-width: 50%;
+    padding-top: 40%;
+    font-size: 2rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero-card {
+    margin-top: 40%;
+    transform: translateY(80px);
+    max-width: 90%;
+    background-color: var(--color-primary);
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+
+.hero-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-align: left;
+    margin: 0 0 1rem;
+}
+
+.hero-register {
+    height: 100vh;
+    height: 100dvh;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow: visible;
+}
+
+.hero-content-form {
+    max-width: 50%;
+    padding-top: 0;
+    margin-top: 36vh;
+    align-self: start;
+    font-size: 2rem;
+}
+
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .hero-card {
+        justify-self: center;
+        width: 100%;
+        max-width: 420px;
+        margin-top: 0;
+    }
+
+    .hero-content {
+        text-align: center;
+        padding-top: 40%;
+        justify-self: center;
+        width: 100%;
+        max-width: 420px;
+        margin-top: 0;
+    }
+
+    h1 {
+        font-size: clamp(2rem, 6vw, 4.5rem);
+    }
+
+    .hero-content-form {
+        text-align: center;
+        justify-self: center;
+        width: 100%;
+        max-width: 420px;
+        padding-top: 40%;
+        margin-top: 0;
+    }
+
+    .hero:has(.form-card) {
+        height: auto;
+        min-height: 100vh;
+        min-height: 100dvh;
+        padding-bottom: 2rem;
+    }
+}
+
+@media (max-width: 650px) {
+    .hero-content {
+        padding-top: 80%;
+    }
+
+    .hero-content-form {
+        padding-top: 80%;
+        margin-top: 0;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 425px) {
+    .hero-card {
+        margin-top: -20%;
+    }
+}

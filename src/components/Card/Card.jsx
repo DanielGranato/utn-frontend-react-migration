@@ -1,3 +1,5 @@
+import './Card.css'
+
 /*
  * Tarjeta reutilizable con dos variantes:
  *   product  imagen, título y descripción (catálogo)
